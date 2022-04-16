@@ -1,24 +1,9 @@
 package com.example.test
 
-
-//data class HTTP_GET_Model(
-//    var something : String? =null ,
-//    var users : ArrayList<UserModel>? =null
-//)
-
-
-data class UserModel(
-    var idx : Int? =null ,
-    var id : String?=null,
-    var nick : String? =null,
-    var pwd : String?= null
-)
-
-
 data class PostModel(
-    var id : String? =null ,
-    var pwd : String?=null,
-    var nick : String? =null
+    var name : String? =null ,
+    var email : String?=null,
+    var password : String? =null
 )
 
 data class PostResult(

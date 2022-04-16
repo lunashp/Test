@@ -9,33 +9,15 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    val api = APIS.create();
+    val api = RegisterService.create();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
-        binding.getbutton.setOnClickListener {
-            api.get_users().enqueue(object : Callback<List<UserModel>> {
-                override fun onResponse(call: Call<List<UserModel>>, response: Response<List<UserModel>>) {
-                    Log.d("log",response.toString())
-                    Log.d("log", response.body().toString())
-                    if(!response.body().toString().isEmpty())
-                        binding.text.setText(response.body().toString());
-                }
-
-                override fun onFailure(call: Call<List<UserModel>>, t: Throwable) {
-                    // 실패
-                    Log.d("log",t.message.toString())
-                    Log.d("log","fail")
-                }
-            })
-        }
-
         binding.postbutton.setOnClickListener {
-            val data = PostModel(binding.idedt.text.toString(),binding.pwdedt.text.toString(),binding.nickedt.text.toString())
+            val data = PostModel(binding.nameedt.text.toString(),binding.emailedt.text.toString(),binding.pwdedt.text.toString())
             api.post_users(data).enqueue(object : Callback<PostResult> {
                 override fun onResponse(call: Call<PostResult>, response: Response<PostResult>) {
                     Log.d("log",response.toString())
@@ -48,7 +30,6 @@ class MainActivity : AppCompatActivity() {
                         val result = 0
                         Log.d("result", "result : ${result}")
                     }
-
                 }
 
                 override fun onFailure(call: Call<PostResult>, t: Throwable) {

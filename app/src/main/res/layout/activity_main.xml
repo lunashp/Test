@@ -6,67 +6,75 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <EditText
-        android:id="@+id/idedt"
-        android:layout_gravity="center"
+        android:id="@+id/nameedt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="아이디 입력"
-        tools:layout_editor_absoluteY="55dp" />
-
-    <EditText
-        android:id="@+id/nickedt"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="닉네임입력"
+        android:ems="10"
+        android:hint="name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="134dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256" />
+
+    <EditText
+        android:id="@+id/emailedt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameedt"
+        app:layout_constraintVertical_bias="0.12" />
 
     <EditText
         android:id="@+id/pwdedt"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="패스워드입력"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="212dp" />
+        app:layout_constraintTop_toBottomOf="@+id/emailedt"
+        app:layout_constraintVertical_bias="0.166" />
 
     <Button
-        android:layout_gravity="center"
-        android:id="@+id/getbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="get요청"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="341dp" />
-
-    <Button
-        android:layout_gravity="center"
         android:id="@+id/postbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="post요청"
+        android:text="Join"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="460dp" />
+        app:layout_constraintTop_toBottomOf="@+id/pwdedt"
+        app:layout_constraintVertical_bias="0.375" />
 
-    <TextView
-        android:layout_gravity="center"
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="초기값"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="611dp" />
-</LinearLayout>
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="초기값"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="611dp" />
+
+    </LinearLayout>
